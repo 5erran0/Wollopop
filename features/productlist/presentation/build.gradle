@@ -30,6 +30,8 @@ dependencies {
     implementation Libs.kotlin.stdlib
 
     implementation Libs.androidx.appCompat
+    implementation Libs.constrainLayout
+    implementation Libs.google.material
 
     implementation Libs.coreKtx
 }
