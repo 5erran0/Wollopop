@@ -44,6 +44,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':features:productlist:presentation')
+
     implementation Libs.kotlin.stdlib
 
     implementation Libs.coreKtx
