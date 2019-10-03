@@ -1,2 +1,4 @@
 include ':app'
+include ':features:productlist:presentation'
+
 rootProject.name='Wollopop'
