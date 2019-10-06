@@ -3,8 +3,20 @@ import com.ginzo.wollopop.Libs
 apply from: "$rootProject.projectDir/gradle/android-build.gradle"
 
 dependencies {
+    implementation project(':core:remote')
+
     implementation Libs.androidx.appCompat
     implementation Libs.constrainLayout
+
+    implementation Libs.dagger.core
+    kapt Libs.dagger.compiler
+
+    implementation Libs.retrofit.core
+
+    implementation Libs.rxjava2.core
+
+    implementation Libs.moshi.core
+    kapt Libs.moshi.codegen
 
     implementation Libs.coreKtx
 }

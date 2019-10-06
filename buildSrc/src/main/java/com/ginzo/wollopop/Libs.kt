@@ -37,6 +37,17 @@ object Libs {
         val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
         val moshiConverter = "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
     }
+
+    object moshi {
+        private const val version = "1.8.0"
+
+        const val core = "com.squareup.moshi:moshi:$version"
+        const val codegen = "com.squareup.moshi:moshi-kotlin-codegen:$version"
+    }
+
+    object rxjava2 {
+        const val core = "io.reactivex.rxjava2:rxjava:2.2.12"
+    }
 }
 
 object Conf {
