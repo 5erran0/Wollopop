@@ -36,7 +36,7 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            
+
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -44,6 +44,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':remote')
+
     implementation project(':features:productlist:presentation')
 
     implementation Libs.kotlin.stdlib
@@ -52,4 +54,7 @@ dependencies {
 
     implementation Libs.androidx.appCompat
     implementation Libs.google.material
+
+    implementation Libs.dagger.core
+    kapt Libs.dagger.compiler
 }
