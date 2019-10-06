@@ -22,6 +22,21 @@ object Libs {
     object google {
         val material = "com.google.android.material:material:1.0.0"
     }
+
+    object dagger {
+        private const val version = "2.24"
+
+        val core = "com.google.dagger:dagger:$version"
+        val compiler = "com.google.dagger:dagger-compiler:$version"
+    }
+
+    object retrofit {
+        private const val retrofitVersion = "2.6.1"
+
+        val core = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+        val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+        val moshiConverter = "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    }
 }
 
 object Conf {
