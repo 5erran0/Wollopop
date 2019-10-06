@@ -1,5 +1,6 @@
 include ':app'
 include ':features:productlist:presentation'
+include ':features:productlist:data'
 include ':remote'
 
 rootProject.name='Wollopop'
