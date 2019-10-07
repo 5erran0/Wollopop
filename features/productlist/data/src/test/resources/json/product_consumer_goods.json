@@ -1,0 +1,13 @@
+{
+  "kind": "consumer_goods",
+  "item": {
+    "id": "5a7ab3e09798181675dc1751",
+    "image": "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image9.jpg",
+    "price": "447€",
+    "name": "enim",
+    "color": "orange",
+    "category": "children",
+    "description": "Officia excepteur exercitation laborum cillum occaecat Lorem voluptate ad ullamco adipisicing adipisicing amet non. Dolor exercitation laborum sunt in ex elit officia non labore veniam culpa dolore. Ex ex tempor anim non.",
+    "distanceInMeters": 414
+  }
+}

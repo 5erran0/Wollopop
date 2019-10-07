@@ -5,6 +5,10 @@ apply from: "$rootProject.projectDir/gradle/android-build.gradle"
 dependencies {
     implementation project(':core:remote')
 
+    implementation project(':commons:data-commons')
+
+    implementation project(':features:productlist:domain')
+
     implementation Libs.androidx.appCompat
     implementation Libs.constrainLayout
 
@@ -13,10 +17,20 @@ dependencies {
 
     implementation Libs.retrofit.core
 
+    implementation Libs.arrow.core
+
     implementation Libs.rxjava2.core
 
     implementation Libs.moshi.core
     kapt Libs.moshi.codegen
 
     implementation Libs.coreKtx
+
+    testImplementation Libs.junit
+    testImplementation Libs.mockito.core
+    testImplementation Libs.mockito.inline
+    testImplementation Libs.mockito.kotlin
+    testImplementation Libs.hamcrest
+
+    debugImplementation Libs.mockito.kotlin
 }

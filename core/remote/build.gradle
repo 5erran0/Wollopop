@@ -13,5 +13,7 @@ dependencies {
     implementation Libs.moshi.core
     kapt Libs.moshi.codegen
 
+    implementation Libs.arrow.core
+
     implementation Libs.coreKtx
 }

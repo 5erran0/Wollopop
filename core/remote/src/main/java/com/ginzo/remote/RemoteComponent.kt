@@ -8,4 +8,6 @@ interface RemoteComponent {
 	interface Factory {
 		fun create(): RemoteComponent
 	}
+
+    fun responseTransformer(): ResponseTransformer
 }
