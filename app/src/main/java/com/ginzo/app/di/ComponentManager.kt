@@ -1,12 +1,17 @@
 package com.ginzo.app.di
 
-import android.app.Application
+import com.ginzo.feature.productlist.data.DaggerProductListDataComponent
+import com.ginzo.feature.productlist.data.ProductListDataComponent
 import com.ginzo.remote.DaggerRemoteComponent
 import com.ginzo.remote.RemoteComponent
 
-class ComponentManager(application: Application) {
+class ComponentManager() {
 
-	internal val remoteComponent: RemoteComponent by lazy {
-		DaggerRemoteComponent.create()
-	}
+  val remoteComponent: RemoteComponent by lazy {
+    DaggerRemoteComponent.factory().create()
+  }
+
+  val productListDataComponent: ProductListDataComponent by lazy {
+    DaggerProductListDataComponent.factory().create(remoteComponent)
+  }
 }

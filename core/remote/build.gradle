@@ -10,9 +10,6 @@ dependencies {
     implementation Libs.dagger.core
     kapt Libs.dagger.compiler
 
-    implementation Libs.moshi.core
-    kapt Libs.moshi.codegen
-
     implementation Libs.arrow.core
 
     implementation Libs.coreKtx

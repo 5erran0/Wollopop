@@ -47,6 +47,7 @@ dependencies {
     implementation project(':core:remote')
 
     implementation project(':features:productlist:presentation')
+    implementation project(':features:productlist:data')
 
     implementation Libs.kotlin.stdlib
 

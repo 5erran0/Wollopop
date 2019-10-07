@@ -8,12 +8,12 @@ import retrofit2.Retrofit
 @Module
 abstract class ProductListDataModule {
 
-	@Module
-	companion object {
-		@Provides
-		@JvmStatic
-		internal fun providesProductListApiRest(retrofit: Retrofit): ProductListApiRest {
-			return retrofit.create(ProductListApiRest::class.java)
-		}
-	}
+  @Module
+  companion object {
+    @Provides
+    @JvmStatic
+    internal fun providesProductListApiRest(retrofit: Retrofit): ProductListApiRest {
+      return retrofit.create(ProductListApiRest::class.java)
+    }
+  }
 }
