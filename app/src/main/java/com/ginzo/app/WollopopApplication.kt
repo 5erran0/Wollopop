@@ -5,10 +5,10 @@ import com.ginzo.app.di.ComponentManager
 
 class WollopopApplication : Application() {
 
-    private lateinit var componentManager: ComponentManager
+	private lateinit var componentManager: ComponentManager
 
-    override fun onCreate() {
-        super.onCreate()
-        componentManager = ComponentManager(this)
-    }
+	override fun onCreate() {
+		super.onCreate()
+		componentManager = ComponentManager(this)
+	}
 }

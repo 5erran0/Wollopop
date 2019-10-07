@@ -4,8 +4,8 @@ import dagger.Component
 
 @Component(modules = [RemoteModule::class])
 interface RemoteComponent {
-    @Component.Factory
-    interface Factory {
-        fun create(): RemoteComponent
-    }
+	@Component.Factory
+	interface Factory {
+		fun create(): RemoteComponent
+	}
 }

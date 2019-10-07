@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ginzo.remote" />
+<manifest package="com.ginzo.remote" />

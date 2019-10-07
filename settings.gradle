@@ -3,4 +3,4 @@ include ':features:productlist:presentation'
 include ':features:productlist:data'
 include ':core:remote'
 
-rootProject.name='Wollopop'
+rootProject.name = 'Wollopop'

@@ -6,7 +6,7 @@ import com.ginzo.remote.RemoteComponent
 
 class ComponentManager(application: Application) {
 
-    internal val remoteComponent: RemoteComponent by lazy {
-        DaggerRemoteComponent.create()
-    }
+	internal val remoteComponent: RemoteComponent by lazy {
+		DaggerRemoteComponent.create()
+	}
 }

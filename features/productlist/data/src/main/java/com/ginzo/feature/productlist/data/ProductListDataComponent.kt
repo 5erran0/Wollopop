@@ -5,10 +5,10 @@ import dagger.Component
 
 @Component(dependencies = [RemoteComponent::class])
 interface ProductListDataComponent {
-    @Component.Factory
-    interface Factory {
-        fun create(
-            remoteComponent: RemoteComponent
-        ): ProductListDataComponent
-    }
+	@Component.Factory
+	interface Factory {
+		fun create(
+			remoteComponent: RemoteComponent
+		): ProductListDataComponent
+	}
 }
