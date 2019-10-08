@@ -1,1 +1,9 @@
+import com.ginzo.wollopop.Libs
+
 apply from: "$rootProject.projectDir/gradle/java-build.gradle"
+
+dependencies {
+    implementation Libs.arrow.core
+
+    implementation Libs.rxjava2.core
+}
