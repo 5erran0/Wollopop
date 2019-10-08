@@ -5,5 +5,14 @@ apply from: "$rootProject.projectDir/gradle/java-build.gradle"
 dependencies {
     implementation Libs.arrow.core
 
+    implementation Libs.dagger.core
+    kapt Libs.dagger.compiler
+
     implementation Libs.rxjava2.core
+
+    testImplementation Libs.junit
+    testImplementation Libs.mockito.core
+    testImplementation Libs.mockito.inline
+    testImplementation Libs.mockito.kotlin
+    testImplementation Libs.hamcrest
 }

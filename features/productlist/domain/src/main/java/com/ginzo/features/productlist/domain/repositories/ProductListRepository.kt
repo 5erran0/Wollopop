@@ -1,4 +1,4 @@
-package com.ginzo.features.productlist.domain
+package com.ginzo.features.productlist.domain.repositories
 
 import arrow.core.Either
 import com.ginzo.features.productlist.domain.entities.Product

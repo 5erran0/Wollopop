@@ -1,5 +1,6 @@
 package com.ginzo.feature.productlist.data
 
+import com.ginzo.features.productlist.domain.repositories.ProductListRepository
 import com.ginzo.remote.RemoteComponent
 import dagger.Component
 
@@ -15,4 +16,6 @@ interface ProductListDataComponent {
       remoteComponent: RemoteComponent
     ): ProductListDataComponent
   }
+
+  fun productListrepository(): ProductListRepository
 }
