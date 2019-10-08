@@ -1,6 +1,6 @@
 import com.ginzo.wollopop.Libs
 
-apply from: "$rootProject.projectDir/gradle/android-build.gradle"
+apply from: "$rootProject.projectDir/gradle/java-build.gradle"
 
 dependencies {
     implementation project(':core:remote')
@@ -31,6 +31,4 @@ dependencies {
     testImplementation Libs.mockito.inline
     testImplementation Libs.mockito.kotlin
     testImplementation Libs.hamcrest
-
-    debugImplementation Libs.mockito.kotlin
 }
