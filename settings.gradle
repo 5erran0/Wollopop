@@ -3,7 +3,6 @@ include ':features:productlist:presentation'
 include ':features:productlist:domain'
 include ':features:productlist:data'
 include ':core:remote'
-include ':commons:data-commons'
 include ':commons:feature-commons'
 
 rootProject.name = 'Wollopop'
