@@ -17,6 +17,8 @@ object Libs {
 
   object androidx {
     val appCompat = "androidx.appcompat:appcompat:1.0.2"
+    val lifecycle = "androidx.lifecycle:lifecycle-common-java8:2.1.0"
+
   }
 
   object google {
@@ -47,6 +49,7 @@ object Libs {
 
   object rxjava2 {
     const val core = "io.reactivex.rxjava2:rxjava:2.2.12"
+    const val android = "io.reactivex.rxjava2:rxandroid:2.0.2"
   }
 
   object arrow {

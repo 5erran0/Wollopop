@@ -3,9 +3,27 @@ import com.ginzo.wollopop.Libs
 apply from: "$rootProject.projectDir/gradle/android-build.gradle"
 
 dependencies {
+    implementation project(':features:productlist:domain')
+
     implementation Libs.androidx.appCompat
+    implementation Libs.androidx.lifecycle
+
     implementation Libs.constrainLayout
     implementation Libs.google.material
 
     implementation Libs.coreKtx
+
+    implementation Libs.dagger.core
+    kapt Libs.dagger.compiler
+
+    implementation Libs.arrow.core
+
+    implementation Libs.rxjava2.core
+    implementation Libs.rxjava2.android
+
+    testImplementation Libs.junit
+    testImplementation Libs.mockito.core
+    testImplementation Libs.mockito.inline
+    testImplementation Libs.mockito.kotlin
+    testImplementation Libs.hamcrest
 }
