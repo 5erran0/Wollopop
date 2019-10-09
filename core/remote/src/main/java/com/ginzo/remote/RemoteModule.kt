@@ -1,6 +1,5 @@
 package com.ginzo.remote
 
-import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers
@@ -17,6 +16,7 @@ abstract class RemoteModule {
   companion object {
     @Provides
     @JvmStatic
+    @Singleton
     fun okHttpClientProvider(): OkHttpClient {
       return OkHttpClient().newBuilder().build()
     }
@@ -26,7 +26,7 @@ abstract class RemoteModule {
     @Singleton
     fun retrofitProvider(okHttpClient: OkHttpClient): Retrofit {
       return Retrofit.Builder()
-        .baseUrl("https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/")
+        .baseUrl("https://raw.githubusercontent.com/")
         .addConverterFactory(MoshiConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
         .client(okHttpClient)

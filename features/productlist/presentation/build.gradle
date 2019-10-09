@@ -3,7 +3,10 @@ import com.ginzo.wollopop.Libs
 apply from: "$rootProject.projectDir/gradle/android-build.gradle"
 
 dependencies {
+    implementation project(':features:productlist:data')
     implementation project(':features:productlist:domain')
+    implementation project(':core:remote')
+    implementation project(':commons:feature-commons')
 
     implementation Libs.androidx.appCompat
     implementation Libs.androidx.lifecycle
@@ -20,6 +23,8 @@ dependencies {
 
     implementation Libs.rxjava2.core
     implementation Libs.rxjava2.android
+
+    implementation Libs.retrofit.core
 
     testImplementation Libs.junit
     testImplementation Libs.mockito.core

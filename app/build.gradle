@@ -44,10 +44,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':core:remote')
 
     implementation project(':features:productlist:presentation')
-    implementation project(':features:productlist:data')
+
+    implementation project(':core:remote')
+
+    implementation project(':commons:feature-commons')
 
     implementation Libs.kotlin.stdlib
 

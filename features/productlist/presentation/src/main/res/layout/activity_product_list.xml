@@ -14,6 +14,10 @@
 			android:layout_width="match_parent"
 			android:layout_height="?attr/actionBarSize"
 			android:background="?attr/colorPrimary" />
-
 	</com.google.android.material.appbar.AppBarLayout>
+
+	<TextView
+		android:id="@+id/textView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -6,11 +6,12 @@ import com.ginzo.features.productlist.domain.usecases.GetProductsUseCase
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
+import javax.inject.Named
 
 class ProductListPresenter @Inject constructor(
   private val useCase: GetProductsUseCase,
   private val view: ProductListView,
-  private val main: Scheduler
+  @Named("main") private val main: Scheduler
 ) : DefaultLifecycleObserver {
 
   private val disposable = CompositeDisposable()

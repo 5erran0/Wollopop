@@ -6,6 +6,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface ProductListApiRest {
-  @GET("items.json")
+  @GET("Wallapop/Wallapop-Android-Test-Resources/master/items.json")
   fun getProducts(): Single<Response<List<ProductEntity>>>
 }
