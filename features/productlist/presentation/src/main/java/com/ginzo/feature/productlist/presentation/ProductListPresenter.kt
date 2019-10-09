@@ -2,12 +2,14 @@ package com.ginzo.feature.productlist.presentation
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import com.ginzo.commons.feature_commons.test.OpenClass
 import com.ginzo.features.productlist.domain.usecases.GetProductsUseCase
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 import javax.inject.Named
 
+@OpenClass
 class ProductListPresenter @Inject constructor(
   private val useCase: GetProductsUseCase,
   private val view: ProductListView,

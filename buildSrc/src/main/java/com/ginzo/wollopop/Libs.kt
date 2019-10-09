@@ -8,6 +8,7 @@ object Libs {
 
     object gradle {
       val core = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+      val allopen = "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
     }
   }
 
@@ -18,7 +19,23 @@ object Libs {
   object androidx {
     val appCompat = "androidx.appcompat:appcompat:1.0.2"
     val lifecycle = "androidx.lifecycle:lifecycle-common-java8:2.1.0"
+    val recyclerview = "androidx.recyclerview:recyclerview:1.0.0"
 
+    object test {
+      private const val version = "1.2.0"
+
+      const val core = "androidx.test:core:$version"
+      const val rules = "androidx.test:rules:$version"
+      const val runner = "androidx.test:runner:$version"
+
+      object espresso {
+        private const val version = "3.2.0"
+
+        const val core = "androidx.test.espresso:espresso-core:$version"
+        const val contrib = "androidx.test.espresso:espresso-contrib:$version"
+        const val intents = "androidx.test.espresso:espresso-intents:$version"
+      }
+    }
   }
 
   object google {
@@ -60,13 +77,20 @@ object Libs {
 
   const val junit = "junit:junit:4.12"
 
+  object glide {
+    private const val version = "4.10.0"
+
+    val core = "com.github.bumptech.glide:glide:$version"
+    val compiler = "com.github.bumptech.glide:compiler:$version"
+  }
+
   object mockito {
 
     const val version = "2.23.0"
 
     const val core = "org.mockito:mockito-core:$version"
-    const val inline = "org.mockito:mockito-inline:$version"
     const val kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
+    const val android = "org.mockito:mockito-android:$version"
   }
 }
 

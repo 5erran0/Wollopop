@@ -1,7 +1,7 @@
 package com.ginzo.app
 
-import com.ginzo.commons.feature_commons.DaggerFeatureComponent
-import com.ginzo.commons.feature_commons.FeatureComponent
+import com.ginzo.commons.feature_commons.di.DaggerFeatureComponent
+import com.ginzo.commons.feature_commons.di.FeatureComponent
 import com.ginzo.feature.productlist.presentation.di.DaggerProductListComponent
 import com.ginzo.feature.productlist.presentation.di.ProductListComponent
 import com.ginzo.remote.DaggerRemoteComponent

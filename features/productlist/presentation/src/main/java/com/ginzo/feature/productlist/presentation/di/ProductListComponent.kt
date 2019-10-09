@@ -1,7 +1,7 @@
 package com.ginzo.feature.productlist.presentation.di
 
-import com.ginzo.commons.feature_commons.FeatureComponent
-import com.ginzo.commons.feature_commons.FeatureScope
+import com.ginzo.commons.feature_commons.di.FeatureComponent
+import com.ginzo.commons.feature_commons.di.FeatureScope
 import com.ginzo.feature.productlist.data.ProductListDataModule
 import com.ginzo.feature.productlist.presentation.ProductListActivity
 import com.ginzo.remote.RemoteComponent

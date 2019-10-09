@@ -1,9 +1,8 @@
-package com.ginzo.commons.feature_commons
+package com.ginzo.commons.feature_commons.di
 
 import dagger.Component
 import io.reactivex.Scheduler
 import javax.inject.Named
-import javax.inject.Singleton
 
 @Component(modules = [FeatureModule::class])
 interface FeatureComponent {

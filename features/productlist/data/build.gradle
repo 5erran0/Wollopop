@@ -21,7 +21,6 @@ dependencies {
 
     testImplementation Libs.junit
     testImplementation Libs.mockito.core
-    testImplementation Libs.mockito.inline
     testImplementation Libs.mockito.kotlin
     testImplementation Libs.hamcrest
 }

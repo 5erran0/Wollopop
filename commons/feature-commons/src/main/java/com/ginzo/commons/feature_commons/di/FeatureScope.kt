@@ -1,4 +1,4 @@
-package com.ginzo.commons.feature_commons
+package com.ginzo.commons.feature_commons.di
 
 import javax.inject.Scope
 
