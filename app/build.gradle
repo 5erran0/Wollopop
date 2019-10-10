@@ -50,6 +50,8 @@ allOpen {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':features:productlist:data')
+    implementation project(':features:productlist:domain')
     implementation project(':features:productlist:presentation')
     implementation project(':features:productdetails:productdetails-presentation')
 

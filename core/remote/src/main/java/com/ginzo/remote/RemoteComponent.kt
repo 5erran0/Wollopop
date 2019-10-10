@@ -6,11 +6,13 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [RemoteModule::class])
-interface RemoteComponent {
+interface RemoteComponentImpl : RemoteComponent {
   @Component.Factory
   interface Factory {
     fun create(): RemoteComponent
   }
+}
 
+interface RemoteComponent {
   fun retrofit(): Retrofit
 }

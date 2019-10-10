@@ -2,21 +2,18 @@ package com.ginzo.feature.productlist.presentation.di
 
 import com.ginzo.commons.feature_commons.di.FeatureComponent
 import com.ginzo.commons.feature_commons.di.FeatureScope
-import com.ginzo.feature.productlist.data.ProductListDataModule
 import com.ginzo.feature.productlist.presentation.ProductListActivity
-import com.ginzo.remote.RemoteComponent
+import com.ginzo.features.productlist.domain.ProductListDomainComponent
 import dagger.Component
 
-@FeatureScope
 @Component(
-  dependencies = [RemoteComponent::class, FeatureComponent::class, ProductListNavigatorComponent::class],
-  modules = [ProductListDataModule::class]
+  dependencies = [ProductListDomainComponent::class, FeatureComponent::class, ProductListNavigatorComponent::class]
 )
 interface ProductListComponent {
   @Component.Factory
   interface Factory {
     fun create(
-      remoteComponent: RemoteComponent,
+      productListDomainComponent: ProductListDomainComponent,
       featureComponent: FeatureComponent,
       productListNavigatorComponent: ProductListNavigatorComponent
     ): ProductListComponent

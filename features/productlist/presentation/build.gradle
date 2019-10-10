@@ -10,9 +10,7 @@ android {
 }
 
 dependencies {
-    implementation project(':features:productlist:data')
     implementation project(':features:productlist:domain')
-    implementation project(':core:remote')
     implementation project(':commons:feature-commons')
     implementation project(':commons:design')
 
