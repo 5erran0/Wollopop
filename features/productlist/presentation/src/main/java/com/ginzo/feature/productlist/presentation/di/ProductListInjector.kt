@@ -5,6 +5,6 @@ import com.ginzo.feature.productlist.presentation.ProductListActivity
 internal fun inject(activity: ProductListActivity) {
   (activity.application as ProductListComponentProvider).productListComponent
     .productListActivity()
-    .create(activity)
+    .create(activity, activity)
     .inject(activity)
 }

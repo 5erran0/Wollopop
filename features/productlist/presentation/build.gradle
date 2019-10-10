@@ -30,8 +30,12 @@ dependencies {
 
     implementation Libs.arrow.core
 
+    implementation Libs.rxjava2.relay
     implementation Libs.rxjava2.core
     implementation Libs.rxjava2.android
+    implementation Libs.rxjava2.relay
+    implementation Libs.rxjava2.bindings.core
+    implementation Libs.rxjava2.bindings.recyclerview
 
     implementation Libs.retrofit.core
 

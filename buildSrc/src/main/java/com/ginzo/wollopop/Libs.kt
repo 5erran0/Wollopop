@@ -67,6 +67,14 @@ object Libs {
   object rxjava2 {
     const val core = "io.reactivex.rxjava2:rxjava:2.2.12"
     const val android = "io.reactivex.rxjava2:rxandroid:2.0.2"
+    const val relay = "com.jakewharton.rxrelay2:rxrelay:2.1.1"
+
+    object bindings {
+      private const val version = "3.0.0"
+
+      const val core = "com.jakewharton.rxbinding3:rxbinding-core:$version"
+      const val recyclerview = "com.jakewharton.rxbinding3:rxbinding-recyclerview:$version"
+    }
   }
 
   object arrow {

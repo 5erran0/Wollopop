@@ -10,12 +10,15 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.ginzo.commons.feature_commons.view.bindView
 import com.ginzo.feature.productlist.presentation.R
 import com.ginzo.features.productlist.domain.entities.Product
+import com.google.android.material.card.MaterialCardView
 
 class ConsumerGoodsViewHolder(
   view: View,
-  private val requestManager: RequestManager
+  private val requestManager: RequestManager,
+  private val onClickProductListener: (Product) -> Unit
 ) : RecyclerView.ViewHolder(view) {
 
+  private val card: MaterialCardView by bindView(R.id.mcv_consumer_good_container)
   private val image: ImageView by bindView(R.id.iv_consumer_good_image)
   private val name: TextView by bindView(R.id.tv_consumer_good_name)
   private val distance: TextView by bindView(R.id.tv_consumer_good_distance)
@@ -23,6 +26,8 @@ class ConsumerGoodsViewHolder(
   private val price: TextView by bindView(R.id.tv_consumer_good_price)
 
   fun bind(product: Product.ConsumerGoods) {
+    card.setOnClickListener { onClickProductListener(product) }
+
     requestManager.load(product.image)
       .transform(CenterCrop(), RoundedCorners(8))
       .into(image)

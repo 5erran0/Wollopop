@@ -1,6 +1,7 @@
 package com.ginzo.feature.productlist.presentation.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
@@ -8,7 +9,8 @@ import com.ginzo.feature.productlist.presentation.R
 import com.ginzo.features.productlist.domain.entities.Product
 
 class ProductListAdapter(
-  private val requestManager: RequestManager
+  private val requestManager: RequestManager,
+  private val onClickProductListener: (Product) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
   var products: List<Product> = emptyList()
@@ -22,19 +24,19 @@ class ProductListAdapter(
       ViewType.CONSUMER_GOODS -> {
         val view = LayoutInflater.from(parent.context)
           .inflate(R.layout.item_product_consumer_goods, parent, false)
-        ConsumerGoodsViewHolder(view, requestManager)
+        ConsumerGoodsViewHolder(view, requestManager, onClickProductListener)
       }
 
       ViewType.CAR -> {
         val view = LayoutInflater.from(parent.context)
           .inflate(R.layout.item_product_car, parent, false)
-        CarViewHolder(view, requestManager)
+        CarViewHolder(view, requestManager, onClickProductListener)
       }
 
       ViewType.SERVICE -> {
         val view = LayoutInflater.from(parent.context)
           .inflate(R.layout.item_product_service, parent, false)
-        ServiceViewHolder(view, requestManager)
+        ServiceViewHolder(view, requestManager, onClickProductListener)
       }
     }
   }

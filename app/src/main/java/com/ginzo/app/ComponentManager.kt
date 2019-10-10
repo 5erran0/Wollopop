@@ -1,5 +1,7 @@
 package com.ginzo.app
 
+import com.ginzo.app.navigation.DaggerNavigatorComponent
+import com.ginzo.app.navigation.NavigatorComponent
 import com.ginzo.commons.feature_commons.di.DaggerFeatureComponent
 import com.ginzo.commons.feature_commons.di.FeatureComponent
 import com.ginzo.feature.productlist.presentation.di.DaggerProductListComponent
@@ -17,7 +19,11 @@ class ComponentManager {
     DaggerFeatureComponent.factory().create()
   }
 
+  private val navigatorComponent: NavigatorComponent by lazy {
+    DaggerNavigatorComponent.factory().create()
+  }
+
   val productListComponent: ProductListComponent by lazy {
-    DaggerProductListComponent.factory().create(remoteComponent, featureComponent)
+    DaggerProductListComponent.factory().create(remoteComponent, featureComponent, navigatorComponent)
   }
 }

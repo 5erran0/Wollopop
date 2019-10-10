@@ -35,4 +35,34 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
+	<LinearLayout
+		android:id="@+id/ll_product_list_retry"
+		android:layout_width="150dp"
+		android:layout_height="wrap_content"
+		android:background="?attr/selectableItemBackgroundBorderless"
+		android:clickable="true"
+		android:focusable="true"
+		android:orientation="vertical"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:gravity="center_horizontal">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/error_retry"
+			android:textColor="@android:color/darker_gray"
+			android:textSize="16sp"
+			android:textStyle="bold" />
+
+		<ImageView
+			android:layout_width="64dp"
+			android:layout_height="64dp"
+			android:src="@drawable/ic_retry_24dp"
+			android:tint="@android:color/darker_gray" />
+	</LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

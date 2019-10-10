@@ -9,7 +9,7 @@ import dagger.Component
 
 @FeatureScope
 @Component(
-  dependencies = [RemoteComponent::class, FeatureComponent::class],
+  dependencies = [RemoteComponent::class, FeatureComponent::class, ProductListNavigatorComponent::class],
   modules = [ProductListDataModule::class]
 )
 interface ProductListComponent {
@@ -17,7 +17,8 @@ interface ProductListComponent {
   interface Factory {
     fun create(
       remoteComponent: RemoteComponent,
-      featureComponent: FeatureComponent
+      featureComponent: FeatureComponent,
+      productListNavigatorComponent: ProductListNavigatorComponent
     ): ProductListComponent
   }
 

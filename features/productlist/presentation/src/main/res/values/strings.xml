@@ -1,3 +1,5 @@
 <resources>
 	<string name="app_name">presentation</string>
+
+	<string name="error_retry">There was an error, do you want to retry?</string>
 </resources>

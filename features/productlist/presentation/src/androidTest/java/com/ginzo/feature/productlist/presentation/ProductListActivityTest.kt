@@ -4,10 +4,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
 import com.ginzo.features.productlist.domain.entities.Product
+import io.reactivex.observers.TestObserver
 import org.hamcrest.CoreMatchers.not
 import org.junit.Before
 import org.junit.Rule
@@ -40,10 +42,12 @@ class ProductListActivityTest {
 
     onView(withId(R.id.product_list_progress_bar)).check(matches(isDisplayed()))
     onView(withId(R.id.product_list_recycler_view)).check(matches(not(isDisplayed())))
+    onView(withId(R.id.ll_product_list_retry)).check(matches(not(isDisplayed())))
   }
 
   @Test
   fun renderShownConsumerGood() {
+    val testObserver = TestObserver.create<ProductListUserIntents>()
 
     val products = listOf(
       Product.ConsumerGoods(
@@ -60,10 +64,12 @@ class ProductListActivityTest {
 
     runOnUiThread {
       activity.render(ProductListViewState.ShownProductList(products))
+      activity.userIntents.subscribe(testObserver)
     }
 
     onView(withId(R.id.product_list_recycler_view)).check(matches(isDisplayed()))
     onView(withId(R.id.product_list_progress_bar)).check(matches(not(isDisplayed())))
+    onView(withId(R.id.ll_product_list_retry)).check(matches(not(isDisplayed())))
 
     onView(withId(R.id.tv_consumer_good_name))
       .check(matches(isDisplayed()))
@@ -76,6 +82,11 @@ class ProductListActivityTest {
     onView(withId(R.id.tv_consumer_good_category))
       .check(matches(isDisplayed()))
       .check(matches(withText(products[0].category)))
+
+    onView(withId(R.id.mcv_consumer_good_container))
+      .perform(click())
+
+    testObserver.assertValue(ProductListUserIntents.ClickProduct(products[0]))
   }
 
   @Test
@@ -101,6 +112,7 @@ class ProductListActivityTest {
 
     onView(withId(R.id.product_list_recycler_view)).check(matches(isDisplayed()))
     onView(withId(R.id.product_list_progress_bar)).check(matches(not(isDisplayed())))
+    onView(withId(R.id.ll_product_list_retry)).check(matches(not(isDisplayed())))
 
     onView(withId(R.id.tv_service_name))
       .check(matches(isDisplayed()))
@@ -139,6 +151,7 @@ class ProductListActivityTest {
 
     onView(withId(R.id.product_list_recycler_view)).check(matches(isDisplayed()))
     onView(withId(R.id.product_list_progress_bar)).check(matches(not(isDisplayed())))
+    onView(withId(R.id.ll_product_list_retry)).check(matches(not(isDisplayed())))
 
     onView(withId(R.id.tv_car_name))
       .check(matches(isDisplayed()))
@@ -147,5 +160,24 @@ class ProductListActivityTest {
     onView(withId(R.id.tv_car_price))
       .check(matches(isDisplayed()))
       .check(matches(withText(products[0].price)))
+  }
+
+  @Test
+  fun renderError() {
+    val testObserver = TestObserver.create<ProductListUserIntents>()
+
+    runOnUiThread {
+      activity.render(ProductListViewState.Error)
+      activity.userIntents.subscribe(testObserver)
+    }
+
+    onView(withId(R.id.ll_product_list_retry)).check(matches(isDisplayed()))
+    onView(withId(R.id.product_list_progress_bar)).check(matches(not(isDisplayed())))
+    onView(withId(R.id.product_list_recycler_view)).check(matches(not(isDisplayed())))
+
+    onView(withId(R.id.ll_product_list_retry))
+      .perform(click())
+
+    testObserver.assertValue(ProductListUserIntents.Retry)
   }
 }

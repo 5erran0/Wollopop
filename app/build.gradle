@@ -51,6 +51,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':features:productlist:presentation')
+    implementation project(':features:productdetails:productdetails-presentation')
 
     implementation project(':core:remote')
 
