@@ -55,6 +55,7 @@ dependencies {
     implementation project(':core:remote')
 
     implementation project(':commons:feature-commons')
+    implementation project(':commons:design')
 
     implementation Libs.kotlin.stdlib
 

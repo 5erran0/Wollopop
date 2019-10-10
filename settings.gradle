@@ -4,5 +4,6 @@ include ':features:productlist:domain'
 include ':features:productlist:data'
 include ':core:remote'
 include ':commons:feature-commons'
+include ':commons:design'
 
 rootProject.name = 'Wollopop'
