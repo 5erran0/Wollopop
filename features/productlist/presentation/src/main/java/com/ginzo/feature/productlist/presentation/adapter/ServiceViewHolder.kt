@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.ginzo.commons.feature_commons.view.bindView
 import com.ginzo.feature.productlist.presentation.R
-import com.ginzo.features.productlist.domain.entities.Product
+import com.ginzo.commons.entities.Product
 import com.google.android.material.card.MaterialCardView
 
 class ServiceViewHolder(
   view: View,
   private val requestManager: RequestManager,
-  private val onClickProductListener: (Product) -> Unit
+  private val onClickProductListener: (com.ginzo.commons.entities.Product) -> Unit
 ) : RecyclerView.ViewHolder(view) {
 
   private val card: MaterialCardView by bindView(R.id.mcv_service_container)
@@ -23,7 +23,7 @@ class ServiceViewHolder(
   private val category: TextView by bindView(R.id.tv_service_category)
   private val price: TextView by bindView(R.id.tv_service_price)
 
-  fun bind(product: Product.Service) {
+  fun bind(product: com.ginzo.commons.entities.Product.Service) {
     card.setOnClickListener { onClickProductListener(product) }
 
     requestManager.load(product.image)

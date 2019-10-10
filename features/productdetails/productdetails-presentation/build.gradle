@@ -4,6 +4,8 @@ apply from: "$rootProject.projectDir/gradle/android-build.gradle"
 
 dependencies {
     implementation project(':commons:design')
+    implementation project(':commons:entities')
+    implementation project(':commons:feature-commons')
 
     implementation Libs.androidx.appCompat
 
@@ -11,4 +13,11 @@ dependencies {
     implementation Libs.google.material
 
     implementation Libs.coreKtx
+
+    androidTestImplementation Libs.androidx.test.rules
+    androidTestImplementation Libs.androidx.test.core
+    androidTestImplementation Libs.androidx.test.espresso.core
+    androidTestImplementation Libs.androidx.test.espresso.contrib
+    androidTestImplementation Libs.mockito.android
+    androidTestImplementation Libs.mockito.kotlin
 }

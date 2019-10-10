@@ -1,4 +1,4 @@
-package com.ginzo.features.productlist.domain.entities
+package com.ginzo.commons.entities
 
 sealed class Product {
   abstract val id: String

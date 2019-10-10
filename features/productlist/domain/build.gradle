@@ -4,6 +4,7 @@ apply from: "$rootProject.projectDir/gradle/android-build.gradle"
 
 dependencies {
     implementation project(':commons:feature-commons')
+    implementation project(':commons:entities')
 
     implementation Libs.arrow.core
 

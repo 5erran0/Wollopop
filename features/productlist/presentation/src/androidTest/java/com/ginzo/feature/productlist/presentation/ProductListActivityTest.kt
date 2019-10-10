@@ -8,7 +8,7 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
-import com.ginzo.features.productlist.domain.entities.Product
+import com.ginzo.commons.entities.Product
 import io.reactivex.observers.TestObserver
 import org.hamcrest.CoreMatchers.not
 import org.junit.Before
@@ -50,7 +50,7 @@ class ProductListActivityTest {
     val testObserver = TestObserver.create<ProductListUserIntents>()
 
     val products = listOf(
-      Product.ConsumerGoods(
+      com.ginzo.commons.entities.Product.ConsumerGoods(
         id = "5a7ab3e09798181675dc1751",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image9.jpg",
         price = "447€",
@@ -93,7 +93,7 @@ class ProductListActivityTest {
   fun renderShownService() {
 
     val products = listOf(
-      Product.Service(
+      com.ginzo.commons.entities.Product.Service(
         id = "5a7abb02dcbccd9bb8e9fb88",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image8.jpg",
         price = "185€",
@@ -131,7 +131,7 @@ class ProductListActivityTest {
   fun renderShownCar() {
 
     val products = listOf(
-      Product.Car(
+      com.ginzo.commons.entities.Product.Car(
         id = "5a7ab5108d12300142fae4a7",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image6.jpg",
         price = "354076€",

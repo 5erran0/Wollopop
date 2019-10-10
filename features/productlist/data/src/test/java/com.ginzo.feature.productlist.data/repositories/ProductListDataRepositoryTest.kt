@@ -1,7 +1,7 @@
 package com.ginzo.feature.productlist.data.repositories
 
 import arrow.core.Either
-import com.ginzo.features.productlist.domain.entities.Product
+import com.ginzo.commons.entities.Product
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
@@ -16,7 +16,7 @@ class ProductListDataRepositoryTest {
   private val dataRepository = ProductListDataRepository(apiRepository)
 
   private val productListWithReps = listOf(
-    Product.ConsumerGoods(
+    com.ginzo.commons.entities.Product.ConsumerGoods(
       id = "5a7ab3e09798181675dc1751",
       image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image9.jpg",
       price = "447€",
@@ -26,7 +26,7 @@ class ProductListDataRepositoryTest {
       description = "Officia excepteur exercitation laborum cillum occaecat Lorem voluptate ad ullamco adipisicing adipisicing amet non. Dolor exercitation laborum sunt in ex elit officia non labore veniam culpa dolore. Ex ex tempor anim non.",
       distanceInMeters = 414
     ),
-    Product.ConsumerGoods(
+    com.ginzo.commons.entities.Product.ConsumerGoods(
       id = "sdasreasefadadas",
       image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image15.jpg",
       price = "447€",
@@ -36,7 +36,7 @@ class ProductListDataRepositoryTest {
       description = "Officia excepteur exercitation laborum cillum occaecat Lorem voluptate ad ullamco adipisicing adipisicing amet non. Dolor exercitation laborum sunt in ex elit officia non labore veniam culpa dolore. Ex ex tempor anim non.",
       distanceInMeters = 14
     ),
-    Product.ConsumerGoods(
+    com.ginzo.commons.entities.Product.ConsumerGoods(
       id = "5a7ab3e09798181675dc1751",
       image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image9.jpg",
       price = "447€",
@@ -49,7 +49,7 @@ class ProductListDataRepositoryTest {
   )
 
   private val productList = listOf(
-    Product.ConsumerGoods(
+    com.ginzo.commons.entities.Product.ConsumerGoods(
       id = "sdasreasefadadas",
       image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image15.jpg",
       price = "447€",
@@ -59,7 +59,7 @@ class ProductListDataRepositoryTest {
       description = "Officia excepteur exercitation laborum cillum occaecat Lorem voluptate ad ullamco adipisicing adipisicing amet non. Dolor exercitation laborum sunt in ex elit officia non labore veniam culpa dolore. Ex ex tempor anim non.",
       distanceInMeters = 14
     ),
-    Product.ConsumerGoods(
+    com.ginzo.commons.entities.Product.ConsumerGoods(
       id = "5a7ab3e09798181675dc1751",
       image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image9.jpg",
       price = "447€",

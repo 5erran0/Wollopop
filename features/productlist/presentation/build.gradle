@@ -11,8 +11,10 @@ android {
 
 dependencies {
     implementation project(':features:productlist:domain')
+
     implementation project(':commons:feature-commons')
     implementation project(':commons:design')
+    implementation project(':commons:entities')
 
     implementation Libs.androidx.appCompat
     implementation Libs.androidx.recyclerview

@@ -8,6 +8,7 @@ dependencies {
     implementation project(':features:productlist:domain')
 
     implementation project(':commons:feature-commons')
+    implementation project(':commons:entities')
 
     implementation Libs.dagger.core
     kapt Libs.dagger.compiler

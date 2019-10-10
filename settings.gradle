@@ -6,5 +6,6 @@ include ':features:productdetails:productdetails-presentation'
 include ':core:remote'
 include ':commons:feature-commons'
 include ':commons:design'
+include ':commons:entities'
 
 rootProject.name = 'Wollopop'

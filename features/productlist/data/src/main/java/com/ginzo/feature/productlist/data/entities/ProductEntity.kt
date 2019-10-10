@@ -1,6 +1,6 @@
 package com.ginzo.feature.productlist.data.entities
 
-import com.ginzo.features.productlist.domain.entities.Product
+import com.ginzo.commons.entities.Product
 import com.squareup.moshi.JsonClass
 import java.io.IOException
 
@@ -9,9 +9,9 @@ data class ProductEntity(
   val kind: String,
   val item: ItemEntity
 ) {
-  fun toDomain(): Product {
+  fun toDomain(): com.ginzo.commons.entities.Product {
     return when (kind) {
-      "car" -> Product.Car(
+      "car" -> com.ginzo.commons.entities.Product.Car(
         item.id,
         item.image,
         item.price,
@@ -24,7 +24,7 @@ data class ProductEntity(
         item.km!!
       )
 
-      "service" -> Product.Service(
+      "service" -> com.ginzo.commons.entities.Product.Service(
         item.id,
         item.image,
         item.price,
@@ -36,7 +36,7 @@ data class ProductEntity(
         item.minimunAge!!
       )
 
-      "consumer_goods" -> Product.ConsumerGoods(
+      "consumer_goods" -> com.ginzo.commons.entities.Product.ConsumerGoods(
         item.id,
         item.image,
         item.price,

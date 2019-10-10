@@ -1,6 +1,6 @@
 package com.ginzo.feature.productlist.data.entities
 
-import com.ginzo.features.productlist.domain.entities.Product
+import com.ginzo.commons.entities.Product
 import com.squareup.moshi.Moshi
 import okio.Okio
 import org.junit.Assert
@@ -19,7 +19,7 @@ class ProductEntityTest {
     val item = jsonAdapter.fromJson(reader)!!.toDomain()
 
     assertEquals(
-      Product.ConsumerGoods(
+      com.ginzo.commons.entities.Product.ConsumerGoods(
         id = "5a7ab3e09798181675dc1751",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image9.jpg",
         price = "447€",
@@ -40,7 +40,7 @@ class ProductEntityTest {
     val item = jsonAdapter.fromJson(reader)!!.toDomain()
 
     assertEquals(
-      Product.Car(
+      com.ginzo.commons.entities.Product.Car(
         id = "5a7ab5108d12300142fae4a7",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image6.jpg",
         price = "354076€",
@@ -63,7 +63,7 @@ class ProductEntityTest {
     val item = jsonAdapter.fromJson(reader)!!.toDomain()
 
     assertEquals(
-      Product.Service(
+      com.ginzo.commons.entities.Product.Service(
         id = "5a7abb02dcbccd9bb8e9fb88",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image8.jpg",
         price = "185€",

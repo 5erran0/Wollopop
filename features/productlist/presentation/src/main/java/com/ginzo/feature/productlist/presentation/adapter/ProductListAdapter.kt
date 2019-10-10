@@ -1,19 +1,18 @@
 package com.ginzo.feature.productlist.presentation.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.ginzo.feature.productlist.presentation.R
-import com.ginzo.features.productlist.domain.entities.Product
+import com.ginzo.commons.entities.Product
 
 class ProductListAdapter(
   private val requestManager: RequestManager,
-  private val onClickProductListener: (Product) -> Unit
+  private val onClickProductListener: (com.ginzo.commons.entities.Product) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-  var products: List<Product> = emptyList()
+  var products: List<com.ginzo.commons.entities.Product> = emptyList()
     set(value) {
       field = value
       notifyDataSetChanged()
@@ -44,17 +43,17 @@ class ProductListAdapter(
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
     when (holder) {
       is ConsumerGoodsViewHolder -> {
-        val consumerGoods = products[position] as Product.ConsumerGoods
+        val consumerGoods = products[position] as com.ginzo.commons.entities.Product.ConsumerGoods
         holder.bind(consumerGoods)
       }
 
       is ServiceViewHolder -> {
-        val service = products[position] as Product.Service
+        val service = products[position] as com.ginzo.commons.entities.Product.Service
         holder.bind(service)
       }
 
       is CarViewHolder -> {
-        val car = products[position] as Product.Car
+        val car = products[position] as com.ginzo.commons.entities.Product.Car
         holder.bind(car)
       }
     }
@@ -66,9 +65,9 @@ class ProductListAdapter(
 
   override fun getItemViewType(position: Int): Int {
     return when (products[position]) {
-      is Product.ConsumerGoods -> ViewType.CONSUMER_GOODS.ordinal
-      is Product.Service -> ViewType.SERVICE.ordinal
-      is Product.Car -> ViewType.CAR.ordinal
+      is com.ginzo.commons.entities.Product.ConsumerGoods -> ViewType.CONSUMER_GOODS.ordinal
+      is com.ginzo.commons.entities.Product.Service -> ViewType.SERVICE.ordinal
+      is com.ginzo.commons.entities.Product.Car -> ViewType.CAR.ordinal
     }
   }
 }

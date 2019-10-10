@@ -9,13 +9,13 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.ginzo.commons.feature_commons.view.bindView
 import com.ginzo.feature.productlist.presentation.R
-import com.ginzo.features.productlist.domain.entities.Product
+import com.ginzo.commons.entities.Product
 import com.google.android.material.card.MaterialCardView
 
 class ConsumerGoodsViewHolder(
   view: View,
   private val requestManager: RequestManager,
-  private val onClickProductListener: (Product) -> Unit
+  private val onClickProductListener: (com.ginzo.commons.entities.Product) -> Unit
 ) : RecyclerView.ViewHolder(view) {
 
   private val card: MaterialCardView by bindView(R.id.mcv_consumer_good_container)
@@ -25,7 +25,7 @@ class ConsumerGoodsViewHolder(
   private val category: TextView by bindView(R.id.tv_consumer_good_category)
   private val price: TextView by bindView(R.id.tv_consumer_good_price)
 
-  fun bind(product: Product.ConsumerGoods) {
+  fun bind(product: com.ginzo.commons.entities.Product.ConsumerGoods) {
     card.setOnClickListener { onClickProductListener(product) }
 
     requestManager.load(product.image)
