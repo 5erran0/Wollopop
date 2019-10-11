@@ -20,4 +20,198 @@
 			app:navigationIcon="@drawable/ic_arrow_back_24dp" />
 	</com.google.android.material.appbar.AppBarLayout>
 
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/product_detail_app_bar">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<ImageView
+				android:id="@+id/iv_product_details_image"
+				android:layout_width="match_parent"
+				android:layout_height="250dp"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<TextView
+				android:id="@+id/tv_product_details_type"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="8dp"
+				android:textAllCaps="true"
+				android:textColor="@android:color/black"
+				android:textSize="10sp"
+				android:textStyle="bold"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/iv_product_details_image" />
+
+			<TextView
+				android:id="@+id/tv_product_details_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAllCaps="true"
+				android:textColor="@android:color/black"
+				android:textSize="20sp"
+				android:textStyle="bold"
+				app:layout_constraintStart_toStartOf="@id/tv_product_details_type"
+				app:layout_constraintTop_toBottomOf="@id/tv_product_details_type" />
+
+			<TextView
+				android:id="@+id/tv_product_details_price"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="16dp"
+				android:textAllCaps="true"
+				android:textColor="@android:color/black"
+				android:textSize="20sp"
+				android:textStyle="bold"
+				app:layout_constraintBottom_toBottomOf="@id/tv_product_details_name"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="@id/tv_product_details_name" />
+
+			<TextView
+				android:id="@+id/tv_product_details_category"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:textAllCaps="true"
+				android:textColor="@android:color/darker_gray"
+				android:textSize="14sp"
+				android:textStyle="bold"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/tv_product_details_name" />
+
+			<TextView
+				android:id="@+id/tv_product_details_distance"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:textColor="@android:color/darker_gray"
+				android:textSize="14sp"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/tv_product_details_category" />
+
+			<FrameLayout
+				android:id="@+id/fl_product_details_details_container"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:layout_constraintTop_toBottomOf="@id/tv_product_details_distance">
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:id="@+id/cl_product_details_consumer_goods_details_container"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					android:layout_marginTop="4dp"
+					android:layout_marginEnd="16dp">
+
+					<TextView
+						android:id="@+id/tv_product_details_consumer_goods_color"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/black"
+						android:textSize="14sp"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+				</androidx.constraintlayout.widget.ConstraintLayout>
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:id="@+id/cl_product_details_service_details_container"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					android:layout_marginTop="4dp"
+					android:layout_marginEnd="16dp"
+					app:layout_constraintTop_toBottomOf="@id/tv_product_details_distance">
+
+					<TextView
+						android:id="@+id/tv_product_details_service_close_day"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/black"
+						android:textSize="14sp"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<TextView
+						android:id="@+id/tv_product_details_service_minimum_age"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/black"
+						android:textSize="14sp"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toBottomOf="@id/tv_product_details_service_close_day"/>
+				</androidx.constraintlayout.widget.ConstraintLayout>
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:id="@+id/cl_product_details_car_details_container"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="16dp"
+					android:layout_marginTop="4dp"
+					android:layout_marginEnd="16dp"
+					app:layout_constraintTop_toBottomOf="@id/tv_product_details_distance">
+
+					<TextView
+						android:id="@+id/tv_product_details_car_motor"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/black"
+						android:textSize="14sp"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<TextView
+						android:id="@+id/tv_product_details_car_gearbox"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/black"
+						android:textSize="14sp"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintTop_toTopOf="@id/tv_product_details_car_motor"
+						app:layout_constraintBottom_toBottomOf="@id/tv_product_details_car_motor" />
+
+					<TextView
+						android:id="@+id/tv_product_details_car_brand"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/black"
+						android:textSize="14sp"
+						app:layout_constraintStart_toStartOf="@id/tv_product_details_car_motor"
+						app:layout_constraintTop_toBottomOf="@id/tv_product_details_car_motor" />
+
+					<TextView
+						android:id="@+id/tv_product_details_car_km"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/black"
+						android:textSize="14sp"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintTop_toTopOf="@id/tv_product_details_car_brand"
+						app:layout_constraintBottom_toBottomOf="@id/tv_product_details_car_brand" />
+				</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+			</FrameLayout>
+
+			<TextView
+				android:id="@+id/tv_product_details_description"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="4dp"
+				android:layout_marginEnd="16dp"
+				android:textColor="@android:color/black"
+				android:textSize="14sp"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/fl_product_details_details_container" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

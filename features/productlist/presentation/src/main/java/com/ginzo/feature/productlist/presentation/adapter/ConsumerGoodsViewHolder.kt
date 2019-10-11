@@ -13,9 +13,9 @@ import com.ginzo.commons.entities.Product
 import com.google.android.material.card.MaterialCardView
 
 class ConsumerGoodsViewHolder(
-  view: View,
+  private val view: View,
   private val requestManager: RequestManager,
-  private val onClickProductListener: (com.ginzo.commons.entities.Product) -> Unit
+  private val onClickProductListener: (Product) -> Unit
 ) : RecyclerView.ViewHolder(view) {
 
   private val card: MaterialCardView by bindView(R.id.mcv_consumer_good_container)
@@ -25,7 +25,7 @@ class ConsumerGoodsViewHolder(
   private val category: TextView by bindView(R.id.tv_consumer_good_category)
   private val price: TextView by bindView(R.id.tv_consumer_good_price)
 
-  fun bind(product: com.ginzo.commons.entities.Product.ConsumerGoods) {
+  fun bind(product: Product.ConsumerGoods) {
     card.setOnClickListener { onClickProductListener(product) }
 
     requestManager.load(product.image)
@@ -34,7 +34,7 @@ class ConsumerGoodsViewHolder(
 
     name.text = product.name
     category.text = product.category
-    distance.text = "a ${product.distanceInMeters} m"
+    distance.text = view.context.getString(R.string.distance, product.distanceInMeters)
     price.text = product.price
   }
 }

@@ -2,6 +2,7 @@ package com.ginzo.feature.productlist.presentation
 
 import androidx.lifecycle.LifecycleOwner
 import arrow.core.Either
+import com.ginzo.commons.entities.Product
 import com.ginzo.feature.productlist.presentation.navigation.ProductListOutsideNavigator
 import com.ginzo.features.productlist.domain.usecases.GetProductsUseCase
 import com.jakewharton.rxrelay2.PublishRelay
@@ -23,11 +24,12 @@ class ProductListPresenterTest {
 
   private val owner: LifecycleOwner = mock()
 
-  private val presenter = ProductListPresenter(useCase, view, Schedulers.trampoline(), outsideNavigator)
+  private val presenter =
+    ProductListPresenter(useCase, view, Schedulers.trampoline(), outsideNavigator)
 
   @After
   fun tearDown() {
-    verifyNoMoreInteractions(useCase, view, outsideNavigator)
+    verifyNoMoreInteractions(useCase, outsideNavigator)
   }
 
   @Test
@@ -35,6 +37,8 @@ class ProductListPresenterTest {
     whenever(useCase.getProducts()).thenReturn(Single.just(Either.right(emptyList())))
 
     presenter.onCreate(owner)
+
+    verify(view).userIntents
 
     verify(view).render(ProductListViewState.Loading)
     verify(useCase).getProducts()
@@ -49,25 +53,53 @@ class ProductListPresenterTest {
     presenter.onCreate(owner)
 
     verify(view).render(ProductListViewState.Loading)
+    verify(view).userIntents
     verify(useCase).getProducts()
     verify(view).render(ProductListViewState.Error)
   }
 
   @Test
   fun userIntentRetry() {
-    whenever(useCase.getProducts()).thenReturn(Single.just(Either.right(emptyList())))
+    val throwable = Throwable()
+    whenever(useCase.getProducts()).thenReturn(Single.just(Either.left(throwable)))
 
+    presenter.onCreate(owner)
     userIntents.accept(ProductListUserIntents.Retry)
 
-    verify(view).render(ProductListViewState.Loading)
-    verify(useCase).getProducts()
-    verify(view).render(ProductListViewState.ShownProductList(emptyList()))
+    verify(view).userIntents
+
+    verify(view, times(2)).render(ProductListViewState.Loading)
+    verify(useCase, times(2)).getProducts()
+    verify(view, times(2)).render(ProductListViewState.Error)
   }
 
   @Test
   fun userIntentClickProduct() {
-    userIntents.accept(ProductListUserIntents.Retry)
+    val product = Product.Car(
+      id = "5a7ab5108d12300142fae4a7",
+      image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image6.jpg",
+      price = "354076€",
+      name = "duis",
+      motor = "gasoline",
+      gearbox = "manual",
+      brand = "irure",
+      km = 1341,
+      description = "Ad eiusmod consectetur nisi enim ex laborum duis adipisicing consectetur pariatur culpa minim. Aliqua quis proident tempor exercitation commodo nisi excepteur quis laborum eu nulla. Irure proident eiusmod nulla ea ut mollit ullamco ea reprehenderit nisi quis id ad et.",
+      distanceInMeters = 841
+    )
 
-    verify(outsideNavigator).productDetails()
+    whenever(useCase.getProducts()).thenReturn(Single.just(Either.right(emptyList())))
+
+    presenter.onCreate(owner)
+
+    verify(view).userIntents
+
+    verify(view).render(ProductListViewState.Loading)
+    verify(useCase).getProducts()
+    verify(view).render(ProductListViewState.ShownProductList(emptyList()))
+
+    userIntents.accept(ProductListUserIntents.ClickProduct(product))
+
+    verify(outsideNavigator).productDetails(product)
   }
 }

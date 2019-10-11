@@ -12,6 +12,9 @@ dependencies {
     implementation Libs.constrainLayout
     implementation Libs.google.material
 
+    implementation Libs.glide.core
+    kapt Libs.glide.compiler
+
     implementation Libs.coreKtx
 
     androidTestImplementation Libs.androidx.test.rules

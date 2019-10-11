@@ -59,6 +59,7 @@ dependencies {
 
     implementation project(':commons:feature-commons')
     implementation project(':commons:design')
+    implementation project(':commons:entities')
 
     implementation Libs.kotlin.stdlib
 

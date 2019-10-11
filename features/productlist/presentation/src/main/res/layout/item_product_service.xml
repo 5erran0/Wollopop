@@ -71,11 +71,15 @@
 				app:layout_constraintBottom_toBottomOf="@id/iv_service_image"
 				app:layout_constraintStart_toEndOf="@id/iv_service_image" />
 
-			<ImageView
+			<TextView
 				android:id="@+id/product_type"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:src="@drawable/ic_service_24dp"
+				android:text="@string/service"
+				android:textColor="@android:color/black"
+				android:textSize="10sp"
+				android:textAllCaps="true"
+				android:textStyle="bold"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
 

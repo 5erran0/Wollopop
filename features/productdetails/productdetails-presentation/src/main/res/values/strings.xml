@@ -1,3 +1,7 @@
 <resources>
 	<string name="app_name">productdetails-presentation</string>
+
+	<string name="close_day">This service is not available on %1$s</string>
+	<string name="min_age">Minimum Age is %1$d</string>
+	<string name="km">%1$d Km</string>
 </resources>

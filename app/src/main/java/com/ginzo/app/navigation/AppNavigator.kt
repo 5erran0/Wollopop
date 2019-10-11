@@ -1,7 +1,7 @@
 package com.ginzo.app.navigation
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import com.ginzo.commons.entities.Product
 import com.ginzo.features.productdetails.productdetails_presentation.ProductDetailActivity
 import javax.inject.Inject
 
@@ -15,10 +15,9 @@ class AppNavigator constructor(
     }
   }
 
-  override fun productDetail() {
+  override fun productDetail(product: Product) {
     activity.startActivity(
-      Intent(Intent.ACTION_VIEW)
-        .setClass(activity, ProductDetailActivity::class.java)
+      ProductDetailActivity.getCallingIntent(activity, product)
     )
   }
 }

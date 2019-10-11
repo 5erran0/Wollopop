@@ -1,3 +1,9 @@
 <resources>
 	<string name="app_name">design</string>
+
+	<string name="consumer_goods">Consumer Goods</string>
+	<string name="car">Car</string>
+	<string name="service">Service</string>
+
+	<string name="distance">a %1$d m</string>
 </resources>

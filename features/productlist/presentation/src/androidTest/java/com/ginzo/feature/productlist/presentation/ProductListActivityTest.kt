@@ -50,7 +50,7 @@ class ProductListActivityTest {
     val testObserver = TestObserver.create<ProductListUserIntents>()
 
     val products = listOf(
-      com.ginzo.commons.entities.Product.ConsumerGoods(
+      Product.ConsumerGoods(
         id = "5a7ab3e09798181675dc1751",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image9.jpg",
         price = "447€",
@@ -83,6 +83,22 @@ class ProductListActivityTest {
       .check(matches(isDisplayed()))
       .check(matches(withText(products[0].category)))
 
+    onView(withId(R.id.tv_consumer_good_distance))
+      .check(
+        matches(
+          withText(
+            activityRule.activity.getString(
+              R.string.distance,
+              products[0].distanceInMeters
+            )
+          )
+        )
+      )
+
+    onView(withId(R.id.product_type))
+      .check(matches(isDisplayed()))
+      .check(matches(withText(R.string.consumer_goods)))
+
     onView(withId(R.id.mcv_consumer_good_container))
       .perform(click())
 
@@ -93,7 +109,7 @@ class ProductListActivityTest {
   fun renderShownService() {
 
     val products = listOf(
-      com.ginzo.commons.entities.Product.Service(
+      Product.Service(
         id = "5a7abb02dcbccd9bb8e9fb88",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image8.jpg",
         price = "185€",
@@ -125,13 +141,29 @@ class ProductListActivityTest {
     onView(withId(R.id.tv_service_category))
       .check(matches(isDisplayed()))
       .check(matches(withText(products[0].category)))
+
+    onView(withId(R.id.tv_service_distance))
+      .check(
+        matches(
+          withText(
+            activityRule.activity.getString(
+              R.string.distance,
+              products[0].distanceInMeters
+            )
+          )
+        )
+      )
+
+    onView(withId(R.id.product_type))
+      .check(matches(isDisplayed()))
+      .check(matches(withText(R.string.service)))
   }
 
   @Test
   fun renderShownCar() {
 
     val products = listOf(
-      com.ginzo.commons.entities.Product.Car(
+      Product.Car(
         id = "5a7ab5108d12300142fae4a7",
         image = "https://raw.githubusercontent.com/Wallapop/Wallapop-Android-Test-Resources/master/images/image6.jpg",
         price = "354076€",
@@ -160,6 +192,22 @@ class ProductListActivityTest {
     onView(withId(R.id.tv_car_price))
       .check(matches(isDisplayed()))
       .check(matches(withText(products[0].price)))
+
+    onView(withId(R.id.tv_car_distance))
+      .check(
+        matches(
+          withText(
+            activityRule.activity.getString(
+              R.string.distance,
+              products[0].distanceInMeters
+            )
+          )
+        )
+      )
+
+    onView(withId(R.id.product_type))
+      .check(matches(isDisplayed()))
+      .check(matches(withText(R.string.car)))
   }
 
   @Test

@@ -27,7 +27,7 @@ class ProductListPresenter @Inject constructor(
       view.userIntents
         .subscribe {
           when (it) {
-            is ProductListUserIntents.ClickProduct -> outsideNavigator.productDetails()
+            is ProductListUserIntents.ClickProduct -> outsideNavigator.productDetails(it.product)
             is ProductListUserIntents.Retry -> getProductList()
           }
         }
@@ -46,7 +46,7 @@ class ProductListPresenter @Inject constructor(
         .toFlowable()
         .observeOn(main)
         .startWith(ProductListViewState.Loading)
-        .subscribe(view::render)
+        .subscribe(view::render) { view.render(ProductListViewState.Error) }
     )
   }
 

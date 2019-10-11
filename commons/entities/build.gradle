@@ -1,1 +1,10 @@
-apply from: "$rootProject.projectDir/gradle/java-build.gradle"
+import com.ginzo.wollopop.Libs
+
+apply from: "$rootProject.projectDir/gradle/android-build.gradle"
+
+dependencies {
+    testImplementation Libs.junit
+    testImplementation Libs.mockito.core
+    testImplementation Libs.mockito.kotlin
+    testImplementation Libs.hamcrest
+}

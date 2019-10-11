@@ -11,9 +11,9 @@ import com.ginzo.commons.entities.Product
 import com.google.android.material.card.MaterialCardView
 
 class CarViewHolder(
-  view: View,
+  private val view: View,
   private val requestManager: RequestManager,
-  private val onClickProductListener: (com.ginzo.commons.entities.Product) -> Unit
+  private val onClickProductListener: (Product) -> Unit
 ) : RecyclerView.ViewHolder(view) {
 
   private val image: ImageView by bindView(R.id.iv_car_image)
@@ -22,14 +22,14 @@ class CarViewHolder(
   private val distance: TextView by bindView(R.id.tv_car_distance)
   private val price: TextView by bindView(R.id.tv_car_price)
 
-  fun bind(product: com.ginzo.commons.entities.Product.Car) {
+  fun bind(product: Product.Car) {
     card.setOnClickListener { onClickProductListener(product) }
 
     requestManager.load(product.image)
       .into(image)
 
     name.text = product.name
-    distance.text = "a ${product.distanceInMeters.toString()} m"
+    distance.text = view.context.getString(R.string.distance, product.distanceInMeters)
     price.text = product.price
   }
 }
