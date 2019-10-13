@@ -3,7 +3,6 @@ package com.ginzo.feature.productlist.data.repositories
 import arrow.core.Either
 import com.ginzo.commons.feature_commons.test.OpenClass
 import com.ginzo.feature.productlist.data.api.ProductListApiRest
-import com.ginzo.commons.entities.Product
 import com.ginzo.remote.responseToEither
 import io.reactivex.Single
 import javax.inject.Inject

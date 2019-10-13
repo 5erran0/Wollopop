@@ -1,6 +1,5 @@
 package com.ginzo.feature.productlist.data.entities
 
-import com.ginzo.commons.entities.Product
 import com.squareup.moshi.Moshi
 import okio.Okio
 import org.junit.Assert
@@ -81,7 +80,8 @@ class ProductEntityTest {
   @Test
   fun toDomain_Unknown() {
     try {
-      val reader = Okio.buffer(Okio.source(javaClass.classLoader!!.getResourceAsStream("json/product_unknown_type.json")!!))
+      val reader =
+        Okio.buffer(Okio.source(javaClass.classLoader!!.getResourceAsStream("json/product_unknown_type.json")!!))
       jsonAdapter.fromJson(reader)!!.toDomain()
 
       Assert.fail()

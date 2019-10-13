@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.ginzo.feature.productlist.presentation.R
-import com.ginzo.commons.entities.Product
 
 class ProductListAdapter(
   private val requestManager: RequestManager,

@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.ginzo.commons.entities.Product
 import com.ginzo.commons.feature_commons.view.bindView
 import com.ginzo.feature.productlist.presentation.R
-import com.ginzo.commons.entities.Product
 import com.google.android.material.card.MaterialCardView
 
 class ConsumerGoodsViewHolder(

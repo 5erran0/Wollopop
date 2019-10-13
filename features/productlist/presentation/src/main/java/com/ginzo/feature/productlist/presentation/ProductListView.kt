@@ -1,6 +1,5 @@
 package com.ginzo.feature.productlist.presentation
 
-import com.ginzo.commons.entities.Product
 import io.reactivex.Observable
 
 interface ProductListView {
@@ -11,10 +10,13 @@ interface ProductListView {
 sealed class ProductListViewState {
   object Loading : ProductListViewState()
   object Error : ProductListViewState()
-  data class ShownProductList(val products: List<com.ginzo.commons.entities.Product>) : ProductListViewState()
+  data class ShownProductList(val products: List<com.ginzo.commons.entities.Product>) :
+    ProductListViewState()
 }
 
 sealed class ProductListUserIntents {
-  data class ClickProduct(val product: com.ginzo.commons.entities.Product) : ProductListUserIntents()
+  data class ClickProduct(val product: com.ginzo.commons.entities.Product) :
+    ProductListUserIntents()
+
   object Retry : ProductListUserIntents()
 }

@@ -1,7 +1,6 @@
 package com.ginzo.feature.productlist.data.repositories
 
 import arrow.core.Either
-import com.ginzo.commons.entities.Product
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions

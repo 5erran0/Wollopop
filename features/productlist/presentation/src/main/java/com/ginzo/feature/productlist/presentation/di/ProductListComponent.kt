@@ -1,7 +1,6 @@
 package com.ginzo.feature.productlist.presentation.di
 
 import com.ginzo.commons.feature_commons.di.FeatureComponent
-import com.ginzo.commons.feature_commons.di.FeatureScope
 import com.ginzo.feature.productlist.presentation.ProductListActivity
 import com.ginzo.features.productlist.domain.ProductListDomainComponent
 import dagger.Component

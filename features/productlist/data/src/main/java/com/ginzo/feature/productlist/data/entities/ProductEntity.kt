@@ -1,6 +1,5 @@
 package com.ginzo.feature.productlist.data.entities
 
-import com.ginzo.commons.entities.Product
 import com.squareup.moshi.JsonClass
 import java.io.IOException
 

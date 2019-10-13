@@ -3,7 +3,6 @@ package com.ginzo.commons.entities.dto
 import android.os.Parcelable
 import com.ginzo.commons.entities.Product
 import kotlinx.android.parcel.Parcelize
-import java.lang.Exception
 
 interface ProductDTO : Parcelable
 

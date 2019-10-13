@@ -2,7 +2,6 @@ package com.ginzo.feature.productlist.data.repositories
 
 import arrow.core.Either
 import com.ginzo.features.productlist.domain.repositories.ProductListRepository
-import com.ginzo.commons.entities.Product
 import io.reactivex.Single
 import javax.inject.Inject
 

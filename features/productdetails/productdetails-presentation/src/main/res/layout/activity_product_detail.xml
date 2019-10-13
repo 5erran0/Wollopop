@@ -146,7 +146,7 @@
 						android:textColor="@android:color/black"
 						android:textSize="14sp"
 						app:layout_constraintStart_toStartOf="parent"
-						app:layout_constraintTop_toBottomOf="@id/tv_product_details_service_close_day"/>
+						app:layout_constraintTop_toBottomOf="@id/tv_product_details_service_close_day" />
 				</androidx.constraintlayout.widget.ConstraintLayout>
 
 				<androidx.constraintlayout.widget.ConstraintLayout
